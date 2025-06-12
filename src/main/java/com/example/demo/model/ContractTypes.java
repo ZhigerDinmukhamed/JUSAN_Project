@@ -12,4 +12,5 @@ public class ContractTypes {
     private Long id;
     @Column(name = "name", length = 255)
     private String Name;
+
 }

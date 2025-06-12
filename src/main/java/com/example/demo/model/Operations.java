@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import jakarta.persistence.*;
+import jdk.jfr.ContentType;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -22,5 +23,4 @@ public class Operations {
     @OneToMany
     @JoinColumn(name = "tariff_category_id")
     private List<TariffCategories> TariffCategoryId;
-
 }
