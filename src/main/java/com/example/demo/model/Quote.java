@@ -16,8 +16,4 @@ public class Quote {
     @Column(name = "name")
     private String Name;
 
-    @OneToOne
-    @JoinColumn(name = "accounting_policy_id")
-    private AccountingPolicy accountingPolicy;
-
 }
