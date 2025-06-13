@@ -14,8 +14,7 @@ public class AccountingPolicy {
     private long id;
     @Column(name = "period_revaluation")
     private String periodRevaluation;
-    @Column(name = "active_types")
-    private String activeTypes;
+
     @Column(name = "revaluation")
     private String Revaluation;
 
