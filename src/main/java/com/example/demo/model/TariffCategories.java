@@ -5,6 +5,7 @@ import lombok.Data;
 
 import java.math.BigInteger;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "tariff_categories")
@@ -18,9 +19,9 @@ public class TariffCategories {
     @Column(name = "end_date")
     private Date endDate;
     @Column(name = "is_standard")
-    private boolean isStandard;
-    @OneToOne
+    private Boolean isStandard;
+    @ManyToOne
     @JoinColumn(name = "tariff_type_id")
-    private TariffCategories tariffTypeId;
+    private TariffTypes tariffTypeId;
 }
 
