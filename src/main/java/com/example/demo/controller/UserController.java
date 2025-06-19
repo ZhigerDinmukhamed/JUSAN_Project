@@ -1,22 +1,23 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.User;
+import com.example.demo.feignClient.UserDto;
 import com.example.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/Zhiger")
-
+@RequestMapping("/api/contract")
 public class UserController {
+
     private final UserService service;
 
-    @GetMapping("/Zhiga")
-    public List<User> getAllUsers() {
-        return service.getAllUsers();
-    }
+    @SneakyThrows
+    @PostMapping("/upload")
+    public String uploadContract(@RequestPart("file") MultipartFile file, @RequestPart("meta") UserDto userDto) {
+        return service.encodeToBase64(file.getBytes());
 
+    }
 }
